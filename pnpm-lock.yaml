@@ -6,7 +6,7 @@ dependencies:
     version: 3.2.47
 
 devDependencies:
-  '@unocss/transformer-directives':
+  '@unocss/transformer-attributify-jsx':
     specifier: ^0.51.8
     version: 0.51.8
   '@vitejs/plugin-vue':
