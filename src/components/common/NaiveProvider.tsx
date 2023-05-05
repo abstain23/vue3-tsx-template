@@ -12,13 +12,13 @@ import { defineComponent, h } from 'vue'
 
 export default defineComponent({
 	name: 'NaiveProvider',
-	setup() {
+	setup(_, { slots }) {
 		return () => (
 			<NLoadingBarProvider>
 				<NDialogProvider>
 					<NNotificationProvider>
 						<NMessageProvider>
-							<slot></slot>
+							{slots.default?.()}
 							<NaiveProviderContent />
 						</NMessageProvider>
 					</NNotificationProvider>

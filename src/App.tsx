@@ -11,6 +11,8 @@ export default defineComponent({
 		const themeStore = useThemeStore()
 
 		subscribeStore()
+
+		console.log('app ===>')
 		return () => (
 			<NConfigProvider
 				locale={zhCN}

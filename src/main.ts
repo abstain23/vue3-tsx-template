@@ -5,9 +5,16 @@ import { createPinia } from 'pinia'
 import App from './App'
 import 'uno.css'
 import 'virtual:svg-icons-register'
+import { setupRouter } from './router'
 
-const app = createApp(App)
+async function bootstrap() {
+	const app = createApp(App)
 
-app.use(createPinia())
+	app.use(createPinia())
 
-app.mount('#app')
+	await setupRouter(app)
+
+	app.mount('#app')
+}
+
+bootstrap()

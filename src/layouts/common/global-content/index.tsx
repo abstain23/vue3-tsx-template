@@ -35,29 +35,31 @@ export default defineComponent({
 			<RouterView>
 				{{
 					default: ({
-						Component,
+						Component: CC,
 						route
 					}: {
 						route: RouteLocationNormalizedLoaded
 						Component: Component
-					}) => (
-						<Transition
-							name={theme.pageAnimateMode}
-							mode='out-in'
-							appear={true}
-							onBeforeLeave={handleOnBeforeLeave}
-							onAfterEnter={handleOnAfterEnter}
-						>
-							<KeepAlive include={[]}>
-								<component
-									is={Component}
-									v-if={app.reloadFlag}
-									key={route.fullPath}
-									class={classStr.value}
-								/>
-							</KeepAlive>
-						</Transition>
-					)
+					}) => {
+						return (
+							<Transition
+								name={theme.pageAnimateMode}
+								mode='out-in'
+								appear={true}
+								onBeforeLeave={handleOnBeforeLeave}
+								onAfterEnter={handleOnAfterEnter}
+							>
+								<KeepAlive include={[]}>
+									<CC
+										// is={Component}
+										v-if={app.reloadFlag}
+										key={route.fullPath}
+										class={classStr.value}
+									/>
+								</KeepAlive>
+							</Transition>
+						)
+					}
 				}}
 			</RouterView>
 		)
