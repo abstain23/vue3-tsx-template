@@ -11,5 +11,8 @@ export default defineConfig({
 		alias: {
 			'@': path.join(path.resolve(process.cwd()), 'src')
 		}
+	},
+	server: {
+		host: '0.0.0.0'
 	}
 })
