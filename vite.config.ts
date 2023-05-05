@@ -27,15 +27,21 @@ export default defineConfig(configEnv => {
 	console.log('collectionName', collectionName)
 	console.log('VITE_ICON_PREFIX', VITE_ICON_PREFIX)
 	return {
+		css: {
+			preprocessorOptions: {
+				scss: {
+					additionalData: `@use "./src/styles/scss/global.scss" as *;`
+				}
+			}
+		},
 		plugins: [
 			vue(),
 			vueJsx(),
 			UnoCSS(),
 			Icons({
-				compiler: 'jsx',
+				compiler: 'vue3',
 				customCollections: {
 					[collectionName]: FileSystemIconLoader(localIconPath, svg => {
-						console.log('svg', svg)
 						return svg.replace(/^<svg\s/, '<svg width="1em" height="1em" ')
 					})
 				},
@@ -43,6 +49,7 @@ export default defineConfig(configEnv => {
 				defaultClass: 'inline-block'
 			}),
 			Components({
+				include: ['/.vue$/', /\.tsx$/],
 				dts: 'src/typings/components.d.ts',
 				resolvers: [
 					IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFIX })

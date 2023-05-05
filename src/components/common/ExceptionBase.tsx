@@ -15,9 +15,9 @@ export default defineComponent({
 		return () => (
 			<div class='flex-col-center gap-24px min-h-520px wh-full overflow-hidden'>
 				<div class='flex text-400px text-primary'>
-					<icon-local-no-permission v-if={props.type === '403'} />
-					<icon-local-not-found v-if={props.type === '404'} />
-					<icon-local-service-error v-if={props.type === '500'} />
+					{props.type === '403' && <icon-local-no-permission />}
+					{props.type === '404' && <icon-local-not-found />}
+					{props.type === '500' && <icon-local-service-error />}
 				</div>
 				<RouterLink to={{ name: 'root' }}>
 					<NButton type='primary'>回到首页</NButton>

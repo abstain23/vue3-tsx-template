@@ -1,4 +1,4 @@
-import { defineComponent, Transition, KeepAlive, type Component, computed } from 'vue'
+import { defineComponent, Transition, KeepAlive, computed, h, type VNode } from 'vue'
 
 import { RouteLocationNormalizedLoaded, RouterView } from 'vue-router'
 
@@ -35,11 +35,11 @@ export default defineComponent({
 			<RouterView>
 				{{
 					default: ({
-						Component: CC,
+						Component,
 						route
 					}: {
 						route: RouteLocationNormalizedLoaded
-						Component: Component
+						Component: VNode
 					}) => {
 						return (
 							<Transition
@@ -50,12 +50,9 @@ export default defineComponent({
 								onAfterEnter={handleOnAfterEnter}
 							>
 								<KeepAlive include={[]}>
-									<CC
-										// is={Component}
-										v-if={app.reloadFlag}
-										key={route.fullPath}
-										class={classStr.value}
-									/>
+									{app.reloadFlag
+										? h(Component, { key: route.fullPath, class: classStr.value })
+										: null}
 								</KeepAlive>
 							</Transition>
 						)

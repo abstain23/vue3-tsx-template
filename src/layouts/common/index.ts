@@ -1,3 +1,3 @@
-import GlobalContent from './global-content/index.vue'
+import GlobalContent from './global-content'
 
 export { GlobalContent }

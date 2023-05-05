@@ -5,6 +5,8 @@ import { dateZhCN, zhCN, NConfigProvider } from 'naive-ui'
 import NaiveProvider from '@/components/common/NaiveProvider'
 import { useThemeStore, subscribeStore } from '@/store'
 
+import './styles/css/global.css'
+
 export default defineComponent({
 	name: 'App',
 	setup() {
