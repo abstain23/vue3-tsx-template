@@ -27,6 +27,14 @@ export default defineConfig(configEnv => {
 	console.log('collectionName', collectionName)
 	console.log('VITE_ICON_PREFIX', VITE_ICON_PREFIX)
 	return {
+		resolve: {
+			alias: {
+				'@': srcPath
+			}
+		},
+		server: {
+			host: '0.0.0.0'
+		},
 		css: {
 			preprocessorOptions: {
 				scss: {
@@ -50,7 +58,8 @@ export default defineConfig(configEnv => {
 			}),
 			Components({
 				include: ['/.vue$/', /\.tsx$/],
-				dts: 'src/typings/components.d.ts',
+				dts: false,
+				types: [],
 				resolvers: [
 					IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFIX })
 				]
@@ -61,14 +70,6 @@ export default defineConfig(configEnv => {
 				inject: 'body-last',
 				customDomId: '__SVG_ICON_LOCAL__'
 			})
-		],
-		resolve: {
-			alias: {
-				'@': srcPath
-			}
-		},
-		server: {
-			host: '0.0.0.0'
-		}
+		]
 	}
 })
