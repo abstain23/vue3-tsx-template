@@ -19,8 +19,15 @@ declare namespace UnionKey {
 	 * - register: 注册
 	 * - reset-pwd: 重置密码
 	 * - bind-wechat: 微信绑定
+	 * - qrcode 扫码登录
 	 */
-	type LoginModule = 'pwd-login' | 'code-login' | 'register' | 'reset-pwd' | 'bind-wechat'
+	type LoginModule =
+		| 'pwd-login'
+		| 'code-login'
+		| 'register'
+		| 'reset-pwd'
+		| 'bind-wechat'
+		| 'qrcode'
 
 	/**
 	 * 布局模式

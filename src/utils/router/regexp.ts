@@ -5,7 +5,8 @@ export function getLoginModuleRegExp() {
 		'code-login',
 		'register',
 		'reset-pwd',
-		'bind-wechat'
+		'bind-wechat',
+		'qrcode'
 	]
 	return modules.join('|')
 }

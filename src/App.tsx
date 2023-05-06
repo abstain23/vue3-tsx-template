@@ -14,7 +14,6 @@ export default defineComponent({
 
 		subscribeStore()
 
-		console.log('app ===>')
 		return () => (
 			<NConfigProvider
 				locale={zhCN}
