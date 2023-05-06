@@ -1,16 +1,20 @@
 import { createApp } from 'vue'
 
-import { createPinia } from 'pinia'
-
 import App from './App'
-import 'uno.css'
-import 'virtual:svg-icons-register'
+
 import { setupRouter } from './router'
+import { setupAssets } from './plugins'
+import { setupStore } from './store'
+import { setupDirectives } from './directives'
 
 async function bootstrap() {
 	const app = createApp(App)
 
-	app.use(createPinia())
+	setupAssets()
+
+	setupStore(app)
+
+	setupDirectives(app)
 
 	await setupRouter(app)
 

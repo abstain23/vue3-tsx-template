@@ -25,6 +25,9 @@ declare namespace PageRoute {
 		| 'exception_403'
 		| 'exception_404'
 		| 'exception_500'
+		| 'dashboard'
+		| 'dashboard_analysis'
+		| 'dashboard_workbench'
 
 	/**
 	 * last degree route key, which has the page file
@@ -32,6 +35,13 @@ declare namespace PageRoute {
 	 */
 	type LastDegreeRouteKey = Extract<
 		RouteKey,
-		'403' | '404' | '500' | 'constant-page' | 'login' | 'not-found'
+		| '403'
+		| '404'
+		| '500'
+		| 'constant-page'
+		| 'login'
+		| 'not-found'
+		| 'dashboard_analysis'
+		| 'dashboard_workbench'
 	>
 }
