@@ -28,4 +28,4 @@ export const routePath = (key: Exclude<AuthRoute.AllRouteKey, 'not-found'>) =>
 	transformRouteNameToRoutePath(key)
 
 export * from './routes'
-// export * from './modules'
+export * from './modules'

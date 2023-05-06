@@ -8,12 +8,19 @@ export default defineComponent({
 	setup() {
 		const { isFullscreen, toggle } = useFullscreen()
 		const theme = useThemeStore()
-		return () => <HoverContainer class="w-40px h-full" tooltip-content="全屏" inverted={theme.header.inverted} onClick={toggle}>
-			{
-				isFullscreen.value ?  <icon-gridicons-fullscreen-exit  class="text-18px" /> :  <icon-gridicons-fullscreen class="text-18px" />
-			}
-			
-   
-		</HoverContainer>
+		return () => (
+			<HoverContainer
+				class='w-40px h-full'
+				tooltip-content='全屏'
+				inverted={theme.header.inverted}
+				onClick={toggle}
+			>
+				{isFullscreen.value ? (
+					<icon-gridicons-fullscreen-exit class='text-18px' />
+				) : (
+					<icon-gridicons-fullscreen class='text-18px' />
+				)}
+			</HoverContainer>
+		)
 	}
 })
