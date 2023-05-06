@@ -1,15 +1,22 @@
-import {  type FunctionalComponent } from "vue"
+import { defineComponent } from 'vue'
 
-type Props = {
-  inverted?: boolean
-}
+export default defineComponent({
+	name: 'DarkModeContainer',
+	props: {
+		inverted: {
+			type: Boolean,
+			default: false
+		}
+	},
+	setup(props, { slots }) {
+		const baseClass = 'dark:bg-dark dark:text-white dark:text-opacity-82 transition-all'
 
-const DarkModeContainer:FunctionalComponent<Props> = (props, {slots}) => {
-  const baseClass = 'dark:bg-dark dark:text-white dark:text-opacity-82 transition-all'
- 
-  return (
-    <div class={`${baseClass} ${props.dadas}`}></div>
-  )
-}
-
-export default DarkModeContainer
+		return () => (
+			<div
+				class={`${baseClass} ${props.inverted ? 'bg-#001428 text-white' : 'bg-white text-#333639'}`}
+			>
+				{slots.default?.()}
+			</div>
+		)
+	}
+})
