@@ -7,4 +7,13 @@ import NaiveProvider from './NaiveProvider'
 
 import SystemLogo from './SystemLogo'
 
-export { DarkModeSwitch, ExceptionBase, NaiveProvider, SystemLogo, DarkModeContainer }
+import HoverContainer from './HoverContainer'
+
+export {
+	DarkModeSwitch,
+	ExceptionBase,
+	NaiveProvider,
+	SystemLogo,
+	DarkModeContainer,
+	HoverContainer
+}
