@@ -39,7 +39,9 @@ export default defineComponent({
 													theme.header.inverted ? 'text-#BBBBBB' : ''
 												}`
 											})}
-											<span class={`${heme.header.inverted ? 'text-#BBBBBB' : ''}`}>{breadcrumb.label}</span>
+										<span class={`${theme.header.inverted ? 'text-#BBBBBB' : ''}`}>
+											{breadcrumb.label}
+										</span>
 									</span>
 								</NDropdown>
 							) : (
