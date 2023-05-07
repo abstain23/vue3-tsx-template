@@ -1,6 +1,8 @@
 import { useRouter } from 'vue-router'
+
+import { routeName, router as globalRouter } from '@/router'
+
 import type { RouteLocationRaw } from 'vue-router'
-import { router as globalRouter, routeName } from '@/router'
 
 /**
  * 路由跳转

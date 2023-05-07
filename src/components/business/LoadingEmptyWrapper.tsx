@@ -1,16 +1,10 @@
-import {
-	defineComponent,
-	PropType,
-	ComponentObjectPropsOptions,
-	computed,
-	watch,
-	nextTick,
-	onUnmounted
-} from 'vue'
-import { useBoolean } from '@/hooks'
-import { NETWORK_ERROR_MSG } from '@/config'
+import { computed, defineComponent, nextTick, onUnmounted, watch } from 'vue'
 import { NSpin } from 'naive-ui'
 
+import { useBoolean } from '@/hooks'
+import { NETWORK_ERROR_MSG } from '@/config'
+
+import type { ComponentObjectPropsOptions, PropType } from 'vue'
 interface Props {
 	/** 是否加载 */
 	loading: boolean

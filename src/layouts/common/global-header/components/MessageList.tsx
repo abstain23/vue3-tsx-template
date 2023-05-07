@@ -1,5 +1,5 @@
 import { NList, NListItem, NScrollbar, NThing, NAvatar, NEllipsis, NTag } from 'naive-ui'
-import { FunctionalComponent } from 'vue'
+import type { FunctionalComponent } from 'vue'
 import { SvgIcon } from '@/components'
 
 interface Props {

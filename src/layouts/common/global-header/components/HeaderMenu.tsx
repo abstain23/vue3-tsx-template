@@ -1,6 +1,7 @@
 import { defineComponent, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { MenuOption, NMenu, NScrollbar } from 'naive-ui'
+import type { MenuOption } from 'naive-ui'
+import { NMenu, NScrollbar } from 'naive-ui'
 import { useRouteStore, useThemeStore } from '@/store'
 import { useRouterPush } from '@/composable'
 

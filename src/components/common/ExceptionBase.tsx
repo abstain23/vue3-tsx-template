@@ -1,7 +1,8 @@
-import { PropType, defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 import { NButton } from 'naive-ui'
 import { RouterLink } from 'vue-router'
 
+import type { PropType } from 'vue'
 type ExceptionType = '403' | '404' | '500'
 
 export default defineComponent({

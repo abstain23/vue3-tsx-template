@@ -1,12 +1,14 @@
+import { NCard, NGradientText } from 'naive-ui'
+import { computed, defineComponent, h, Transition } from 'vue'
+
 import { DarkModeSwitch, SystemLogo } from '@/components'
 import { useAppInfo } from '@/composable'
 import { useThemeStore } from '@/store'
 import { getColorPalette, mixColor } from '@/utils'
-import { NCard, NGradientText } from 'naive-ui'
-import { defineComponent, computed, Transition, h, PropType } from 'vue'
-import type { Component } from 'vue'
+
 import { LoginBg, PwdLogin, QrcodeLogin } from './components'
 
+import type { Component, PropType } from 'vue'
 type LoginModule = {
 	key: UnionKey.LoginModule
 	label: string
@@ -14,7 +16,7 @@ type LoginModule = {
 }
 
 export default defineComponent({
-	name: 'Login',
+	name: 'LoginPage',
 	props: {
 		module: {
 			type: String as PropType<UnionKey.LoginModule>,

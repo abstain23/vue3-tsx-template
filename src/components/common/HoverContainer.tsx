@@ -1,5 +1,8 @@
-import { PropType, computed, defineComponent } from 'vue'
-import { NTooltip, PopoverPlacement } from 'naive-ui'
+import { computed, defineComponent } from 'vue'
+import { NTooltip } from 'naive-ui'
+
+import type { PropType } from 'vue'
+import type { PopoverPlacement } from 'naive-ui'
 
 export default defineComponent({
 	name: 'HoverContainer',

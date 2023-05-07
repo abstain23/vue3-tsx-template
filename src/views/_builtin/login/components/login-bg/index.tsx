@@ -1,4 +1,5 @@
-import { PropType, defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
 import { computed } from 'vue'
 import { getColorPalette } from '@/utils'
 import CornerTop from './CornerTop'

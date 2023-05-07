@@ -1,5 +1,5 @@
 import { createPinia } from 'pinia'
-import { App } from 'vue'
+import type { App } from 'vue'
 import { resetSetupStore } from './plugins'
 
 export function setupStore(app: App) {

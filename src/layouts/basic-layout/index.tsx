@@ -1,9 +1,11 @@
+import './index.scss'
+
 import { defineComponent } from 'vue'
+
 import { useAppStore, useThemeStore } from '@/store'
 import { useBasicLayout } from '@/composable'
 
 import AdminLayout from '../common/admin-layout'
-import './index.scss'
 
 export default defineComponent({
 	name: 'BasicLayout',

@@ -1,6 +1,7 @@
-import { defineComponent, computed, useAttrs, PropType } from 'vue'
+import { computed, defineComponent, useAttrs } from 'vue'
 import { Icon } from '@iconify/vue'
 
+import type { PropType } from 'vue'
 export default defineComponent({
 	name: 'SvgIcon',
 	props: {

@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-	name: 'Workbench',
+	name: 'DashBoardWorkbench',
 	setup() {
 		return () => <div>workbench</div>
 	}

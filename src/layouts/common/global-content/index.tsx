@@ -1,6 +1,7 @@
 import { defineComponent, Transition, KeepAlive, computed, h, type VNode } from 'vue'
 
-import { RouteLocationNormalizedLoaded, RouterView } from 'vue-router'
+import type { RouteLocationNormalizedLoaded } from 'vue-router'
+import { RouterView } from 'vue-router'
 
 import { useAppStore, useThemeStore } from '@/store'
 
