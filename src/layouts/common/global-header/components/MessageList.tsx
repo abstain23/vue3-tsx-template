@@ -11,9 +11,9 @@ type Emits = {
 }
 
 const MessageList: FunctionalComponent<Props, Emits> = (props, { emit }) => {
-	// function handleRead(index: number) {
-	// 	emit('read', index)
-	// }
+	function handleRead(index: number) {
+		emit('read', index)
+	}
 
 	return (
 		<NScrollbar class='max-h-360px'>
