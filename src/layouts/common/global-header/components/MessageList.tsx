@@ -20,7 +20,11 @@ const MessageList: FunctionalComponent<Props, Emits> = (props, { emit }) => {
 			<NList>
 				{props.list?.map((item, index) => {
 					return (
-						<NListItem key={item.id} class='hover:bg-#f6f6f6 dark:hover:bg-dark cursor-pointer'>
+						<NListItem
+							key={item.id}
+							class='hover:bg-#f6f6f6 dark:hover:bg-dark cursor-pointer'
+							onClick={() => handleRead(index)}
+						>
 							<NThing class={`px-15px ${item.isRead ? 'opacity-30' : ''}`}>
 								{{
 									avatar: () =>
@@ -55,6 +59,7 @@ const MessageList: FunctionalComponent<Props, Emits> = (props, { emit }) => {
 									)
 								}}
 							</NThing>
+							<div></div>
 						</NListItem>
 					)
 				})}

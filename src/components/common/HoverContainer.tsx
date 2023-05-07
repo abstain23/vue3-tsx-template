@@ -22,7 +22,7 @@ export default defineComponent({
 		},
 		onClick: {
 			type: Function,
-			default: () => {}
+			default: () => undefined
 		}
 	},
 	setup(props, { slots }) {
