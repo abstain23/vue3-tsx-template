@@ -19,6 +19,7 @@
 		"naive-ui": "^2.34.3",
 		"pinia": "^2.0.35",
 		"qrcode.vue": "^3.4.0",
+		"sass": "^1.62.1",
 		"ua-parser-js": "^1.0.35",
 		"vue": "^3.2.47",
 		"vue-router": "^4.1.6"
