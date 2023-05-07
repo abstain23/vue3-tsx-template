@@ -34,12 +34,12 @@ export default defineComponent({
 		return () => (
 			<template>
 				<template v-if={renderLocalIcon.value}>
-					<svg aria-hidden='true' width='1em' height='1em' v-bind={bindAttrs.value}>
+					<svg aria-hidden='true' width='1em' height='1em' {...bindAttrs.value}>
 						<use xlinkHref={symbolId.value} fill='currentColor' />
 					</svg>
 				</template>
 				<template v-else>
-					<Icon v-if={props.icon} icon={props.icon as string} v-bind={bindAttrs.value} />
+					<Icon v-if={props.icon} icon={props.icon as string} {...bindAttrs.value} />
 				</template>
 			</template>
 		)
