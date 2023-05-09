@@ -1,9 +1,10 @@
 import { defineComponent } from 'vue'
 import { RouterView } from 'vue-router'
+import { dateZhCN, NConfigProvider, zhCN } from 'naive-ui'
 
-import { dateZhCN, zhCN, NConfigProvider } from 'naive-ui'
 import NaiveProvider from '@/components/common/NaiveProvider'
-import { useThemeStore, subscribeStore } from '@/store'
+import { subscribeStore, useThemeStore } from '@/store'
+import { useGlobalEvents } from '@/composable'
 
 export default defineComponent({
 	name: 'App',
@@ -11,6 +12,7 @@ export default defineComponent({
 		const themeStore = useThemeStore()
 
 		subscribeStore()
+		useGlobalEvents()
 		return () => (
 			<NConfigProvider
 				locale={zhCN}

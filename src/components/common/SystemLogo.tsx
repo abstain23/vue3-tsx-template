@@ -6,9 +6,18 @@ export default defineComponent({
 		fill: {
 			type: Boolean,
 			default: false
-		}
+		},
+		class: String
 	},
 	setup(props) {
-		return () => <div>{props.fill ? <icon-local-logo-fill /> : <icon-local-logo />}</div>
+		return () => (
+			<>
+				{props.fill ? (
+					<icon-local-logo-fill class={props.class} />
+				) : (
+					<icon-local-logo class={props.class} />
+				)}
+			</>
+		)
 	}
 })
