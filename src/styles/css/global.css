@@ -1,8 +1,16 @@
-@import "./transition.css";
-@import "./reset.css";
+@import './transition.css';
+@import './reset.css';
 
 html,
 body,
 #app {
 	height: 100%;
+}
+
+.drawer-shadow {
+	box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
+}
+
+.global-side {
+	box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
 }

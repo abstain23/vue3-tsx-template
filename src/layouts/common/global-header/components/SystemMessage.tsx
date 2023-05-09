@@ -1,11 +1,15 @@
 import { computed, defineComponent, ref } from 'vue'
+import { NBadge, NPopover, NTabPane, NTabs } from 'naive-ui'
+
+import LoadingEmptyWrapper from '@/components/business/LoadingEmptyWrapper'
 import { useThemeStore } from '@/store'
 import { useBoolean } from '@/hooks'
 import { useBasicLayout } from '@/composable'
-import { NBadge, NPopover, NTabPane, NTabs } from 'naive-ui'
 import { HoverContainer } from '@/components'
 
-defineComponent({
+import MessageList from './MessageList'
+
+export default defineComponent({
 	name: 'SystemMessage',
 	setup() {
 		const theme = useThemeStore()
@@ -222,9 +226,36 @@ defineComponent({
 									</div>
 								)
 							}}
+							<LoadingEmptyWrapper
+								class='h-360px'
+								loading={loading.value}
+								empty={item.list.length === 0}
+								placeholderClass='"bg-$n-color transition-background-color duration-300 ease-in-out'
+							>
+								<MessageList list={item.list} onRead={handleRead} />
+							</LoadingEmptyWrapper>
 						</NTabPane>
 					))}
 				</NTabs>
+				{showAction.value && (
+					<div class='flex border-t border-$n-divider-color cursor-pointer'>
+						<div class='flex-1 text-center py-10px' onClick={handleClear}>
+							清空
+						</div>
+						<div
+							class='flex-1 text-center py-10px border-l border-$n-divider-color'
+							onClick={handleAllRead}
+						>
+							全部已读
+						</div>
+						<div
+							class='flex-1 text-center py-10px border-l border-$n-divider-color'
+							onClick={handleLoadMore}
+						>
+							查看更多
+						</div>
+					</div>
+				)}
 			</NPopover>
 		)
 	}

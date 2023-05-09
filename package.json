@@ -11,6 +11,7 @@
 		"format": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}"
 	},
 	"dependencies": {
+		"@better-scroll/core": "^2.5.1",
 		"@soybeanjs/vue-materials": "^0.1.9",
 		"@vueuse/core": "^10.1.2",
 		"colord": "^2.9.3",
@@ -49,6 +50,7 @@
 		"unplugin-vue-components": "^0.24.1",
 		"vite": "^4.3.2",
 		"vite-plugin-svg-icons": "^2.0.1",
+		"vue-i18n": "^9.2.2",
 		"vue-tsc": "^1.4.2"
 	}
 }

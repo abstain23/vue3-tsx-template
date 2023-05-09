@@ -4,7 +4,7 @@ import { NSpin } from 'naive-ui'
 import { useBoolean } from '@/hooks'
 import { NETWORK_ERROR_MSG } from '@/config'
 
-import type { ComponentObjectPropsOptions, PropType } from 'vue'
+import type { PropType } from 'vue'
 interface Props {
 	/** 是否加载 */
 	loading: boolean
@@ -59,7 +59,7 @@ export default defineComponent({
 			type: Boolean,
 			default: false
 		}
-	} as ComponentObjectPropsOptions<Props>,
+	},
 	setup(props, { slots }) {
 		// 网络状态
 		const { bool: network, setBool: setNetwork } = useBoolean(window.navigator.onLine)
@@ -104,7 +104,7 @@ export default defineComponent({
 						class={`absolute-lt w-full h-full ${props.placeholderClass}`}
 					>
 						<div v-show={props.loading} class='absolute-center'>
-							<NSpin show={true} size={props.loadingSize!} />
+							<NSpin show={true} size={props.loadingSize} />
 						</div>
 						<div v-show={isEmpty.value} class='absolute-center'>
 							<div class='relative'>
