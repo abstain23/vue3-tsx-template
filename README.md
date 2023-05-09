@@ -1,6 +1,2 @@
 # Vue 3 + TypeScript + Vite + TSX
-- 配置unocss
-- 支持tsx
-- layouts
-- 路由组件
-- pinia
+- 基于[Soybean Admin](https://github.com/honghuangdc/soybean-admin) 的所有逻辑
