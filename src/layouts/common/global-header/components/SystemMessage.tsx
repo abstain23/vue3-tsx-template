@@ -5,7 +5,7 @@ import LoadingEmptyWrapper from '@/components/business/LoadingEmptyWrapper'
 import { useThemeStore } from '@/store'
 import { useBoolean } from '@/hooks'
 import { useBasicLayout } from '@/composable'
-import { HoverContainer, SvgIcon } from '@/components'
+import { HoverContainer } from '@/components'
 
 import MessageList from './MessageList'
 
@@ -194,8 +194,9 @@ export default defineComponent({
 							inverted={theme.header.inverted}
 							class='relative w-40px h-full'
 						>
-							{/* <icon-clarity:notification-line class='text-18px' /> */}
-							<SvgIcon icon='clarity:notification-line' class='text-18px' />
+							{/* 注意 冒号要改成短横线- */}
+							<icon-clarity-notification-line class='text-18px' />
+							{/* <SvgIcon icon='clarity:notification-line' class='text-18px' /> */}
 							<NBadge
 								value={count.value}
 								max={99}
