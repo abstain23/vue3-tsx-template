@@ -55,11 +55,14 @@ export default defineConfig(configEnv => {
 				defaultClass: 'inline-block'
 			}),
 			Components({
-				include: ['/.vue$/', /\.tsx$/],
+				include: [/\.vue$/, /\.tsx$/],
 				dts: false,
 				types: [],
 				resolvers: [
-					IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFIX })
+					IconsResolver({
+						customCollections: [collectionName],
+						componentPrefix: VITE_ICON_PREFIX
+					})
 				]
 			}),
 			createSvgIconsPlugin({
@@ -68,6 +71,9 @@ export default defineConfig(configEnv => {
 				inject: 'body-last',
 				customDomId: '__SVG_ICON_LOCAL__'
 			})
-		]
+		],
+		optimizeDeps: {
+			include: ['@better-scroll/core']
+		}
 	}
 })

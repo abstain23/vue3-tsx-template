@@ -44,7 +44,7 @@ export default defineComponent({
 			default: 'bg-white dark:bg-dark transition-background-color duration-300 ease-in-out'
 		},
 		emptyDesc: {
-			tupe: String,
+			type: String,
 			default: '暂无数据'
 		},
 		iconClass: {

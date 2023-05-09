@@ -5,7 +5,7 @@ import LoadingEmptyWrapper from '@/components/business/LoadingEmptyWrapper'
 import { useThemeStore } from '@/store'
 import { useBoolean } from '@/hooks'
 import { useBasicLayout } from '@/composable'
-import { HoverContainer } from '@/components'
+import { HoverContainer, SvgIcon } from '@/components'
 
 import MessageList from './MessageList'
 
@@ -194,7 +194,8 @@ export default defineComponent({
 							inverted={theme.header.inverted}
 							class='relative w-40px h-full'
 						>
-							<icon-clarity notificationLine={true} className='text-18px' />
+							{/* <icon-clarity:notification-line class='text-18px' /> */}
+							<SvgIcon icon='clarity:notification-line' class='text-18px' />
 							<NBadge
 								value={count.value}
 								max={99}
@@ -203,12 +204,12 @@ export default defineComponent({
 						</HoverContainer>
 					),
 					default: () => (
-						<>
+						<div>
 							<NTabs
 								v-model:value={currentTab.value}
 								class={isMobile.value ? 'w-276px' : 'w-360px'}
 								type='line'
-								justify-content='space-evenly'
+								justifyContent='space-evenly'
 							>
 								{tabData.value.map((item, index) => (
 									<NTabPane key={item.key} name={index}>
@@ -224,19 +225,23 @@ export default defineComponent({
 														{...item.badgeProps}
 														value={item.list.filter(message => !message.isRead).length}
 														max={99}
-														show-zero
+														showZero
 													/>
 												</div>
+											),
+											default: () => (
+												<LoadingEmptyWrapper
+													class='h-360px'
+													loading={loading.value}
+													empty={item.list.length === 0}
+													placeholderClass='"bg-$n-color transition-background-color duration-300 ease-in-out'
+												>
+													<div>
+														<MessageList list={item.list} onRead={handleRead} />
+													</div>
+												</LoadingEmptyWrapper>
 											)
 										}}
-										<LoadingEmptyWrapper
-											class='h-360px'
-											loading={loading.value}
-											empty={item.list.length === 0}
-											placeholderClass='"bg-$n-color transition-background-color duration-300 ease-in-out'
-										>
-											<MessageList list={item.list} onRead={handleRead} />
-										</LoadingEmptyWrapper>
 									</NTabPane>
 								))}
 							</NTabs>
@@ -259,7 +264,7 @@ export default defineComponent({
 									</div>
 								</div>
 							)}
-						</>
+						</div>
 					)
 				}}
 			</NPopover>

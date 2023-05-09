@@ -22,10 +22,6 @@ export default defineComponent({
 		inverted: {
 			type: Boolean,
 			default: false
-		},
-		onClick: {
-			type: Function,
-			default: () => undefined
 		}
 	},
 	setup(props, { slots }) {
@@ -45,7 +41,8 @@ export default defineComponent({
 								>
 									{slots.default?.()}
 								</div>
-							)
+							),
+							default: () => props.tooltipContent
 						}}
 					</NTooltip>
 				</div>

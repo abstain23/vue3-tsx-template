@@ -102,28 +102,31 @@ export default defineComponent({
 				class={['flex h-full pr-18px', isChromeMode.value ? 'items-end' : 'items-center gap-12px']}
 			>
 				{tab.tabs.map(item => (
-					<AdminTab
+					<div
 						key={item.fullPath}
-						mode={theme.tab.mode}
-						darkMode={theme.darkMode}
-						active={tab.activeTab === item.fullPath}
-						activeColor={theme.themeColor}
-						closable={!(item.name === tab.homeTab.name || item.meta.affix)}
-						onClick={() => tab.handleClickTab(item.fullPath)}
-						onClose={() => tab.removeTab(item.fullPath)}
 						onContextmenu={(e: MouseEvent) => handleContextMenu(e, item.fullPath, item.meta.affix)}
 					>
-						{{
-							prefix: () => (
-								<SvgIcon
-									class='inline-block align-text-bottom text-16px'
-									icon={item.meta.icon}
-									localIcon={item.meta.localIcon}
-								/>
-							)
-						}}
-						{item.meta.title}
-					</AdminTab>
+						<AdminTab
+							mode={theme.tab.mode}
+							darkMode={theme.darkMode}
+							active={tab.activeTab === item.fullPath}
+							activeColor={theme.themeColor}
+							closable={!(item.name === tab.homeTab.name || item.meta.affix)}
+							onClick={() => tab.handleClickTab(item.fullPath)}
+							onClose={() => tab.removeTab(item.fullPath)}
+						>
+							{{
+								prefix: () => (
+									<SvgIcon
+										class='inline-block align-text-bottom text-16px'
+										icon={item.meta.icon}
+										localIcon={item.meta.localIcon}
+									/>
+								),
+								default: () => item.meta.title
+							}}
+						</AdminTab>
+					</div>
 				))}
 				<ContextMenu
 					visible={dropdown.visible}

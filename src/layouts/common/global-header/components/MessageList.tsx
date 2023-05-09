@@ -19,7 +19,7 @@ export default defineComponent({
 			emit('read', index)
 		}
 
-		return (
+		return () => (
 			<NScrollbar class='max-h-360px'>
 				<NList>
 					{props.list?.map((item, index) => {
@@ -40,9 +40,9 @@ export default defineComponent({
 												),
 											header: () => (
 												<NEllipsis lineClamp={1}>
-													{item.title}
 													{{
-														tooltip: () => item.title
+														tooltip: () => item.title,
+														default: () => item.title
 													}}
 												</NEllipsis>
 											),
@@ -57,12 +57,11 @@ export default defineComponent({
 													{item.description && (
 														<NEllipsis lineClamp={2}>{item.description}</NEllipsis>
 													)}
-													{item.date}
+													<p>{item.date}</p>
 												</>
 											)
 										}}
 									</NThing>
-									<div></div>
 								</NListItem>
 							</div>
 						)

@@ -21,15 +21,14 @@ export default defineComponent({
 		}
 		return () => (
 			<RouterLink to={routeHomePath} class='flex-center w-full nowrap-hidden'>
-				<SystemLogo class='text-32px text-primary'>
-					<h2
-						v-show={props.showTitle}
-						class='pl-8px text-16px font-bold text-primary transition duration-300 ease-in-out'
-						onClick={toggleLocal}
-					>
-						{t('message.system.title')}
-					</h2>
-				</SystemLogo>
+				<SystemLogo class='text-32px text-primary' />
+				<h2
+					v-show={props.showTitle}
+					class='pl-8px text-16px font-bold text-primary transition duration-300 ease-in-out'
+					onClick={toggleLocal}
+				>
+					{t('message.system.title')}
+				</h2>
 			</RouterLink>
 		)
 	}

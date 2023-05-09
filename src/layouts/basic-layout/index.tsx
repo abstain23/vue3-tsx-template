@@ -23,6 +23,7 @@ export default defineComponent({
 		const theme = useThemeStore()
 
 		const { mode, headerProps, sideVisible, sideWidth, sideCollapsedWidth } = useBasicLayout()
+
 		return () => (
 			<>
 				<AdminLayout
