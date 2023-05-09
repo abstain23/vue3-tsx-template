@@ -14,3 +14,7 @@ body,
 .global-side {
 	box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
 }
+
+.layout-card__shadow {
+	box-shadow: 0 1px 2.5px rgba(0, 0, 0, 0.18);
+}

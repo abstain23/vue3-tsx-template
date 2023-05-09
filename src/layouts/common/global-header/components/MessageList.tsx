@@ -1,4 +1,4 @@
-import { NAvatar, NEllipsis, NList, NListItem, NScrollbar, NTag, NThing, NButton } from 'naive-ui'
+import { NAvatar, NEllipsis, NList, NListItem, NScrollbar, NTag, NThing } from 'naive-ui'
 import { defineComponent, type PropType } from 'vue'
 
 import { SvgIcon } from '@/components'
