@@ -35,17 +35,24 @@ export default defineComponent({
 										{theme.header.crumb.showIcon &&
 											breadcrumb.icon &&
 											h(breadcrumb.icon, {
-												class: `inline-block align-text-bottom mr-4px text-16px ${
-													theme.header.inverted ? 'text-#BBBBBB' : ''
-												}`
+												class: `inline-block align-text-bottom mr-4px text-16px`
 											})}
-										<span class={`${theme.header.inverted ? 'text-#BBBBBB' : ''}`}>
-											{breadcrumb.label}
-										</span>
+										<span>{breadcrumb.label}</span>
 									</span>
 								</NDropdown>
 							) : (
-								''
+								<>
+									{theme.header.crumb.showIcon &&
+										breadcrumb.icon &&
+										h(breadcrumb.icon, {
+											class: `inline-block align-text-bottom mr-4px text-16px ${
+												theme.header.inverted ? 'text-#BBBBBB' : ''
+											}`
+										})}
+									<span class={`${theme.header.inverted ? 'text-#BBBBBB' : ''}`}>
+										{breadcrumb.label}
+									</span>
+								</>
 							)}
 						</NBreadcrumbItem>
 					)

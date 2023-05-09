@@ -14,7 +14,7 @@ export default defineComponent({
 					app.settingDrawerVisible ? 'ease-out' : 'ease-in',
 					app.settingDrawerVisible ? '!right-330px' : ''
 				]}
-				onClick={app.toggleMixSideFixed}
+				onClick={app.toggleSettingDrawerVisible}
 			>
 				{app.settingDrawerVisible ? (
 					<icon-ant-design-close-outlined class='text-24px' />

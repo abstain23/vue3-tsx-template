@@ -11,9 +11,10 @@ export default defineComponent({
 				class='w-40px h-full'
 				tooltipContent='主题配置'
 				inverted={theme.header.inverted}
-				onClick={app.toggleSettingDrawerVisible}
 			>
-				<icon-ant-design-setting-outlined className='text-20px' />
+				<div onClick={app.toggleSettingDrawerVisible}>
+					<icon-ant-design-setting-outlined className='text-20px' />
+				</div>
 			</HoverContainer>
 		)
 	}

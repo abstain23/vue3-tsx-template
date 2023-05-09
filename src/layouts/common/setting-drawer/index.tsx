@@ -19,7 +19,7 @@ export default defineComponent({
 		const app = useAppStore()
 
 		const showButton = import.meta.env.DEV || import.meta.env.VITE_VERCEL === 'Y'
-
+		console.log('app.settingDrawerVisible', app.settingDrawerVisible)
 		return () => (
 			<>
 				<NDrawer

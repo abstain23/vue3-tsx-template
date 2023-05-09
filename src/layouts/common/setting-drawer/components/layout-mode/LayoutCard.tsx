@@ -66,9 +66,9 @@ export default defineComponent({
 							>
 								{slots.default?.()}
 							</div>
-						)
+						),
+						default: () => <span>{props.label}</span>
 					}}
-					<span>{props.label}</span>
 				</NTooltip>
 			</div>
 		)

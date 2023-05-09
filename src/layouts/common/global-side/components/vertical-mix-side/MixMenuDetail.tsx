@@ -17,7 +17,7 @@ export default defineComponent({
 			type: String
 		},
 		icon: {
-			type: Object as PropType<() => VNodeChild>,
+			type: Function as PropType<() => VNodeChild>,
 			default: () => undefined
 		},
 		isMini: {
