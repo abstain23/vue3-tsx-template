@@ -11,7 +11,6 @@ export default defineComponent({
 	emits: ['mouseleave'],
 	setup(props, { slots, emit }) {
 		const baseClass = 'dark:bg-dark dark:text-white dark:text-opacity-82 transition-all'
-
 		return () => (
 			<div
 				onMouseleave={() => emit('mouseleave')}

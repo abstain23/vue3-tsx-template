@@ -1,10 +1,12 @@
-import { ref, watch, defineComponent } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useElementBounding } from '@vueuse/core'
+
 import { useTabStore, useThemeStore } from '@/store'
 import { useDeviceInfo } from '@/composable'
+import { BetterScroll, DarkModeContainer } from '@/components'
+
 import { ReloadButton, TabDetail } from './components'
-import { DarkModeContainer } from '@/components'
 
 export default defineComponent({
 	name: 'GlobalTab',
@@ -52,12 +54,9 @@ export default defineComponent({
 				style={{ height: theme.tab.height + 'px' }}
 			>
 				<div ref={bsWrapper} class='flex-1-hidden h-full'>
-					<better-scroll
-						ref='bsScroll'
-						options={{ scrollX: true, scrollY: false, click: canClick }}
-					>
+					<BetterScroll ref={bsScroll} options={{ scrollX: true, scrollY: false, click: canClick }}>
 						<TabDetail onScroll={handleScroll} />
-					</better-scroll>
+					</BetterScroll>
 				</div>
 				<ReloadButton />
 			</DarkModeContainer>

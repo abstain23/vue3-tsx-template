@@ -201,61 +201,67 @@ export default defineComponent({
 								class={`absolute top-10px ${count.value < 10 ? '-right-2px' : '-right-10px'}`}
 							></NBadge>
 						</HoverContainer>
+					),
+					default: () => (
+						<>
+							<NTabs
+								v-model:value={currentTab.value}
+								class={isMobile.value ? 'w-276px' : 'w-360px'}
+								type='line'
+								justify-content='space-evenly'
+							>
+								{tabData.value.map((item, index) => (
+									<NTabPane key={item.key} name={index}>
+										{{
+											tab: () => (
+												<div
+													class={`flex-x-center items-center ${
+														isMobile.value ? 'w-92px' : 'w-120px'
+													}`}
+												>
+													<span class='mr-5px'>{item.name}</span>
+													<NBadge
+														{...item.badgeProps}
+														value={item.list.filter(message => !message.isRead).length}
+														max={99}
+														show-zero
+													/>
+												</div>
+											)
+										}}
+										<LoadingEmptyWrapper
+											class='h-360px'
+											loading={loading.value}
+											empty={item.list.length === 0}
+											placeholderClass='"bg-$n-color transition-background-color duration-300 ease-in-out'
+										>
+											<MessageList list={item.list} onRead={handleRead} />
+										</LoadingEmptyWrapper>
+									</NTabPane>
+								))}
+							</NTabs>
+							{showAction.value && (
+								<div class='flex border-t border-$n-divider-color cursor-pointer'>
+									<div class='flex-1 text-center py-10px' onClick={handleClear}>
+										清空
+									</div>
+									<div
+										class='flex-1 text-center py-10px border-l border-$n-divider-color'
+										onClick={handleAllRead}
+									>
+										全部已读
+									</div>
+									<div
+										class='flex-1 text-center py-10px border-l border-$n-divider-color'
+										onClick={handleLoadMore}
+									>
+										查看更多
+									</div>
+								</div>
+							)}
+						</>
 					)
 				}}
-				<NTabs
-					v-model:value={currentTab.value}
-					class={isMobile.value ? 'w-276px' : 'w-360px'}
-					type='line'
-					justify-content='space-evenly'
-				>
-					{tabData.value.map((item, index) => (
-						<NTabPane key={item.key} name={index}>
-							{{
-								tab: () => (
-									<div
-										class={`flex-x-center items-center ${isMobile.value ? 'w-92px' : 'w-120px'}`}
-									>
-										<span class='mr-5px'>{item.name}</span>
-										<NBadge
-											{...item.badgeProps}
-											value={item.list.filter(message => !message.isRead).length}
-											max={99}
-											show-zero
-										/>
-									</div>
-								)
-							}}
-							<LoadingEmptyWrapper
-								class='h-360px'
-								loading={loading.value}
-								empty={item.list.length === 0}
-								placeholderClass='"bg-$n-color transition-background-color duration-300 ease-in-out'
-							>
-								<MessageList list={item.list} onRead={handleRead} />
-							</LoadingEmptyWrapper>
-						</NTabPane>
-					))}
-				</NTabs>
-				{showAction.value && (
-					<div class='flex border-t border-$n-divider-color cursor-pointer'>
-						<div class='flex-1 text-center py-10px' onClick={handleClear}>
-							清空
-						</div>
-						<div
-							class='flex-1 text-center py-10px border-l border-$n-divider-color'
-							onClick={handleAllRead}
-						>
-							全部已读
-						</div>
-						<div
-							class='flex-1 text-center py-10px border-l border-$n-divider-color'
-							onClick={handleLoadMore}
-						>
-							查看更多
-						</div>
-					</div>
-				)}
 			</NPopover>
 		)
 	}

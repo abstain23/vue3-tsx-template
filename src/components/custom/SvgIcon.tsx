@@ -32,17 +32,13 @@ export default defineComponent({
 
 		/** 渲染本地icon */
 		const renderLocalIcon = computed(() => props.localIcon || !props.icon)
-		return () => (
-			<template>
-				<template v-if={renderLocalIcon.value}>
-					<svg aria-hidden='true' width='1em' height='1em' {...bindAttrs.value}>
-						<use xlinkHref={symbolId.value} fill='currentColor' />
-					</svg>
-				</template>
-				<template v-else>
-					<Icon v-if={props.icon} icon={props.icon as string} {...bindAttrs.value} />
-				</template>
-			</template>
-		)
+		return () =>
+			renderLocalIcon.value ? (
+				<svg aria-hidden='true' width='1em' height='1em' {...bindAttrs.value}>
+					<use xlinkHref={symbolId.value} fill='currentColor' />
+				</svg>
+			) : (
+				props.icon && <Icon icon={props.icon as string} {...bindAttrs.value} />
+			)
 	}
 })
