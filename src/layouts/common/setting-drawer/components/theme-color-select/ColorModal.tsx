@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { NGradientText, NGrid, NGridItem, NModal, NTabPane, NTabs } from 'naive-ui'
 
 import { traditionColors } from '@/settings'
@@ -14,6 +14,8 @@ export default defineComponent({
 	emits: ['close'],
 	setup(props, { emit }) {
 		const theme = useThemeStore()
+
+		const currentTab = ref(traditionColors[0].label)
 
 		function handleClose() {
 			emit('close')
@@ -31,7 +33,7 @@ export default defineComponent({
 						中国传统颜色
 					</NGradientText>
 				</div>
-				<NTabs>
+				<NTabs v-model:value={currentTab.value}>
 					{traditionColors.map(item => (
 						<NTabPane key={item.label} name={item.label} tab={item.label}>
 							<NGrid cols={8} xGap={16} yGap={8}>

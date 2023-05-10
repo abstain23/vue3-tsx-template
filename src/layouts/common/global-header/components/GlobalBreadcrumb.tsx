@@ -24,6 +24,7 @@ export default defineComponent({
 		function dropdownSelect(key: string) {
 			routerPush({ name: key })
 		}
+
 		return () => (
 			<NBreadcrumb class='px-12px'>
 				{breadcrumbs.value.map(breadcrumb => {

@@ -237,9 +237,7 @@ export default defineComponent({
 													empty={item.list.length === 0}
 													placeholderClass='"bg-$n-color transition-background-color duration-300 ease-in-out'
 												>
-													<div>
-														<MessageList list={item.list} onRead={handleRead} />
-													</div>
+													<MessageList list={item.list} onRead={handleRead} />
 												</LoadingEmptyWrapper>
 											)
 										}}

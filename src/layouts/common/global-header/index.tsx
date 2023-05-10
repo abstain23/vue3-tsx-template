@@ -36,7 +36,7 @@ export default defineComponent({
 				{props.showLogo && (
 					<GlobalLogo showTitle={true} class='h-full' style={{ width: theme.sider.width + 'px' }} />
 				)}
-				{props.showHeaderMenu ? (
+				{!props.showHeaderMenu ? (
 					<div class='flex-1-hidden flex-y-center h-full'>
 						{(props.showMenuCollapse || isMobile.value) && <MenuCollapse />}
 						{theme.header.crumb.visible && !isMobile.value && <GlobalBreadcrumb />}

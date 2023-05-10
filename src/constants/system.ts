@@ -5,7 +5,7 @@ export const themeLayoutModeLabels: Record<UnionKey.ThemeLayoutMode, string> = {
 	'horizontal-mix': '顶部菜单混合模式'
 }
 
-export const themeLayoutModeOptions: Utils.OptionWithKey<UnionKey.ThemeLayoutMode>[] = [
+export const themeLayoutModeOptions: Common.OptionWithKey<UnionKey.ThemeLayoutMode>[] = [
 	{
 		value: 'vertical',
 		label: themeLayoutModeLabels.vertical
@@ -29,7 +29,7 @@ export const themeScrollModeLabels: Record<UnionKey.ThemeScrollMode, string> = {
 	content: '主体滚动'
 }
 
-export const themeScrollModeOptions: Utils.OptionWithKey<UnionKey.ThemeScrollMode>[] = [
+export const themeScrollModeOptions: Common.OptionWithKey<UnionKey.ThemeScrollMode>[] = [
 	{
 		value: 'wrapper',
 		label: themeScrollModeLabels.wrapper
@@ -45,7 +45,7 @@ export const themeTabModeLabels: Record<UnionKey.ThemeTabMode, string> = {
 	button: '按钮风格'
 }
 
-export const themeTabModeOptions: Utils.OptionWithKey<UnionKey.ThemeTabMode>[] = [
+export const themeTabModeOptions: Common.OptionWithKey<UnionKey.ThemeTabMode>[] = [
 	{
 		value: 'chrome',
 		label: themeTabModeLabels.chrome
@@ -65,7 +65,7 @@ export const themeHorizontalMenuPositionLabels: Record<
 	'flex-end': '居右'
 }
 
-export const themeHorizontalMenuPositionOptions: Utils.OptionWithKey<UnionKey.ThemeHorizontalMenuPosition>[] =
+export const themeHorizontalMenuPositionOptions: Common.OptionWithKey<UnionKey.ThemeHorizontalMenuPosition>[] =
 	[
 		{
 			value: 'flex-start',
@@ -90,7 +90,7 @@ export const themeAnimateModeLabels: Record<UnionKey.ThemeAnimateMode, string> =
 	'fade-scale': '缩放消退'
 }
 
-export const themeAnimateModeOptions: Utils.OptionWithKey<UnionKey.ThemeAnimateMode>[] = [
+export const themeAnimateModeOptions: Common.OptionWithKey<UnionKey.ThemeAnimateMode>[] = [
 	{
 		value: 'zoom-fade',
 		label: themeAnimateModeLabels['zoom-fade']
